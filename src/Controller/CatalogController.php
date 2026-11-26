@@ -1,4 +1,10 @@
 <?php
+
+namespace App\Controllers;
+
+use App\Models\Product;
+use App\Repositories\JsonProductRepository;
+use App\Repositories\JsonCategoryRepository;
 declare(strict_types=1);
 final class CatalogController
 {
