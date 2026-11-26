@@ -8,5 +8,5 @@
 <label for="address">Адрес или пункт получения</label><input id="address" name="address" required value="<?= htmlspecialchars($old['address']??'',ENT_QUOTES,'UTF-8') ?>">
 <label for="delivery">Способ доставки</label><select id="delivery" name="delivery" required><?php foreach($deliveryMethods as $method): ?><option value="<?= htmlspecialchars($method['id'],ENT_QUOTES,'UTF-8') ?>" <?= ($old['delivery']??'')===$method['id']?'selected':'' ?>><?= htmlspecialchars($method['name'],ENT_QUOTES,'UTF-8') ?> — <?= (int)$method['price'] ?> ₽</option><?php endforeach; ?></select>
 <button class="button">Подтвердить заказ</button></form>
-<aside class="panel"><h2>Ваш заказ</h2><?php foreach($lines as $line): ?><p><?= htmlspecialchars($line['product']->name,ENT_QUOTES,'UTF-8') ?> × <?= $line['quantity'] ?></p><?php endforeach; ?><strong>Товары: <?= number_format($total,0,',',' ') ?> ₽</strong></aside></section>
+<aside class="panel"><h2>Ваш заказ</h2><?php foreach($lines as $line): ?><p><?= htmlspecialchars($line['product']->name,ENT_QUOTES,'UTF-8') ?> × <?= $line['quantity'] ?></p><?php endforeach; ?><p>Товары: <?= number_format($total,0,',',' ') ?> ₽</p><p>Доставка: <?= number_format($deliveryPrice,0,',',' ') ?> ₽</p></aside></section>
 <?php endif; ?>
