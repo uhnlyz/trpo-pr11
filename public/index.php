@@ -9,7 +9,7 @@ spl_autoload_register(static function (string $class): void {
         return;
     }
     $relative = substr($class, strlen($prefix));
-    $file = __DIR__ . '/../src/' . str_replace('\\\\', '/', $relative) . '.php';
+    $file = __DIR__ . '/../src/' . str_replace('\\', '/', $relative) . '.php';
     if (is_file($file)) {
         require $file;
     }
