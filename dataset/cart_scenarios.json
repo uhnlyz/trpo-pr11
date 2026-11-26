@@ -1,0 +1,6 @@
+[
+  {"scenario":"Пустая корзина","operations":[],"expected_count":0,"expected_total":0},
+  {"scenario":"Добавить Каркассон два раза","operations":[{"action":"add","product_id":1},{"action":"add","product_id":1}],"expected_count":2,"expected_total":4980},
+  {"scenario":"Изменить количество Диксит","operations":[{"action":"add","product_id":2},{"action":"update","product_id":2,"quantity":3}],"expected_count":3,"expected_total":9570},
+  {"scenario":"Удалить позицию","operations":[{"action":"add","product_id":1},{"action":"remove","product_id":1}],"expected_count":0,"expected_total":0}
+]
