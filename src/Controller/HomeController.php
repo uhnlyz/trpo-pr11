@@ -1,4 +1,6 @@
 <?php
+
+namespace App\Controllers;
 declare(strict_types=1);
 
 final class HomeController
