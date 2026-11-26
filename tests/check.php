@@ -9,7 +9,10 @@ spl_autoload_register(static function (string $class): void {
     $prefix = 'App\\';
     if (!str_starts_with($class, $prefix)) return;
     $relative = substr($class, strlen($prefix));
-    $file = dirname(__DIR__) . '/src/' . str_replace('\\', '/', $relative) . '.php';
+    $segments = explode('\\', $relative);
+    $directoryMap = ['Controllers'=>'Controller', 'Models'=>'Model', 'Repositories'=>'Repository', 'Services'=>'Service'];
+    $segments[0] = $directoryMap[$segments[0]] ?? $segments[0];
+    $file = dirname(__DIR__) . '/src/' . implode('/', $segments) . '.php';
     if (is_file($file)) require $file;
 });
 
