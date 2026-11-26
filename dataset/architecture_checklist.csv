@@ -1,0 +1,10 @@
+check,location,status
+Namespace для основных классов,src/,выполнено
+Автозагрузка App через spl_autoload_register,public/index.php,выполнено
+Зависимости через конструкторы,src/Controller/,выполнено
+Экранирование HTML,views/,выполнено
+Изменение состояния только через POST,dataset/routes.csv,выполнено
+Обработка неизвестного маршрута,public/index.php,выполнено
+Проверка количества и id товара,src/Services/CartService.php,выполнено
+Валидация checkout,src/Services/OrderValidator.php,выполнено
+CSRF для POST,public/index.php и views/,выполнено
