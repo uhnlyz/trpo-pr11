@@ -1,0 +1,6 @@
+[
+  {"scenario":"Пустое имя","input":{"name":"","email":"test@example.com","address":"Москва","delivery":"courier"},"valid":false},
+  {"scenario":"Некорректный email","input":{"name":"Иван","email":"wrong","address":"Москва","delivery":"courier"},"valid":false},
+  {"scenario":"Неизвестная доставка","input":{"name":"Иван","email":"ivan@example.com","address":"Москва","delivery":"unknown"},"valid":false},
+  {"scenario":"Корректный заказ","input":{"name":"Иван","email":"ivan@example.com","address":"Москва, ул. Ленина, 1","delivery":"courier"},"valid":true}
+]
