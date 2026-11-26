@@ -1,0 +1,14 @@
+method,path,expected_status,expected_result
+GET,/,200,Главная страница
+GET,/catalog,200,Каталог товаров
+GET,/product,200,Карточка существующего товара с id
+GET,/product,404,Карточка неизвестного товара
+GET,/cart,200,Корзина
+POST,/cart/add,302,Добавление товара и redirect
+POST,/cart/update,302,Изменение количества и redirect
+POST,/cart/remove,302,Удаление позиции и redirect
+GET,/checkout,200,Форма заказа
+POST,/checkout,302,Создание заказа и redirect
+GET,/order-success,200,Подтверждение существующего заказа
+GET,/unknown,404,Страница 404
+POST,/cart/add,403,POST без CSRF-токена
