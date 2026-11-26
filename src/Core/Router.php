@@ -18,8 +18,8 @@ final class Router
             throw new \RuntimeException('Не удалось открыть routes.csv.');
         }
 
-        fgetcsv($handle);
-        while (($row = fgetcsv($handle)) !== false) {
+        fgetcsv($handle, 0, ',', '"', '');
+        while (($row = fgetcsv($handle, 0, ',', '"', '')) !== false) {
             if (count($row) < 4) {
                 continue;
             }
