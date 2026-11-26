@@ -10,12 +10,12 @@ final class Router
     public function __construct(string $routesFile)
     {
         if (!is_file($routesFile)) {
-            throw new RuntimeException('Не найден файл routes.csv.');
+            throw new \\RuntimeException('Не найден файл routes.csv.');
         }
 
         $handle = fopen($routesFile, 'rb');
         if ($handle === false) {
-            throw new RuntimeException('Не удалось открыть routes.csv.');
+            throw new \\RuntimeException('Не удалось открыть routes.csv.');
         }
 
         fgetcsv($handle);
