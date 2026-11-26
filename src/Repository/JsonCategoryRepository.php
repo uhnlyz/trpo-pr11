@@ -1,4 +1,8 @@
 <?php
+
+namespace App\Repositories;
+
+use App\Models\Category;
 declare(strict_types=1);
 final class JsonCategoryRepository
 {
