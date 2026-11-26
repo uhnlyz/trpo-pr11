@@ -1,4 +1,11 @@
 <?php
+
+namespace App\Controllers;
+
+use App\Models\OrderData;
+use App\Repositories\JsonOrderRepository;
+use App\Services\CartService;
+use App\Services\OrderValidator;
 declare(strict_types=1);
 final class CheckoutController
 {
