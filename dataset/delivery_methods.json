@@ -1,0 +1,5 @@
+[
+  {"id":"pickup","name":"Самовывоз","price":0},
+  {"id":"courier","name":"Курьер","price":350},
+  {"id":"post","name":"Почта","price":250}
+]
