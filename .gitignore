@@ -4,3 +4,6 @@
 Thumbs.db
 *.log
 /data/*.tmp
+
+/data/orders.json
+/data/*.tmp
