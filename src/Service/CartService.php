@@ -1,4 +1,8 @@
 <?php
+
+namespace App\Services;
+
+use App\Repositories\JsonProductRepository;
 declare(strict_types=1);
 
 final class CartService
