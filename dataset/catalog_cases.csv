@@ -1,0 +1,5 @@
+case,category_id,sort,expected_count
+all,,name,3
+strategy,1,name,2
+party,2,price_asc,1
+empty,99,name,0
