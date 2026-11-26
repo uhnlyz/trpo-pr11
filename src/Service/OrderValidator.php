@@ -1,4 +1,6 @@
 <?php
+
+namespace App\Services;
 declare(strict_types=1);
 final class OrderValidator
 {
