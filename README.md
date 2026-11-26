@@ -24,10 +24,10 @@ find public src views tests -name '*.php' -print0 | xargs -0 -n1 php -l
 ## Архитектура
 - public/index.php — точка входа, запуск сессии, CSRF и автозагрузка.
 - src/Core/Router.php — сопоставление HTTP-метода и пути с действием.
-- src/Controllers — контроллеры страниц, каталога, корзины и заказа.
-- src/Models — Product, Category и OrderData.
-- src/Repositories — чтение JSON-данных и сохранение заказов.
-- src/Services — операции корзины и проверка формы.
+- src/Controller — контроллеры страниц, каталога, корзины и заказа.
+- src/Model — Product, Category и OrderData.
+- src/Repository — чтение JSON-данных и сохранение заказов.
+- src/Service — операции корзины и проверка формы.
 - views — отображение подготовленных данных.
 
 Путь запроса: браузер → public/index.php → Router → Controller → Service/Repository → View → общий layout.
