@@ -1,0 +1,10 @@
+[
+  {"case":"HTML в названии","input":"<script>alert(1)</script>","expected":"Текст отображается экранированным"},
+  {"case":"Пустое имя","input":{"name":"   ","email":"user@example.com","address":"Адрес","delivery":"courier"},"expected":"Ошибка обязательного поля name"},
+  {"case":"Некорректный email","input":{"name":"Иван","email":"wrong","address":"Адрес","delivery":"courier"},"expected":"Ошибка email"},
+  {"case":"Отрицательное количество","input":{"product_id":1,"quantity":-2},"expected":"Корзина не изменяется"},
+  {"case":"Нулевое количество","input":{"product_id":1,"quantity":0},"expected":"Корзина не изменяется"},
+  {"case":"Неизвестный товар","input":{"product_id":999,"quantity":1},"expected":"Товар не добавляется"},
+  {"case":"Неизвестный способ доставки","input":{"name":"Иван","email":"user@example.com","address":"Адрес","delivery":"unknown"},"expected":"Ошибка выбора доставки"},
+  {"case":"POST без CSRF","input":{},"expected":"HTTP 403"}
+]
