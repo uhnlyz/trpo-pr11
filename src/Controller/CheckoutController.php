@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Controllers;
 
@@ -6,7 +7,6 @@ use App\Models\OrderData;
 use App\Repositories\JsonOrderRepository;
 use App\Services\CartService;
 use App\Services\OrderValidator;
-declare(strict_types=1);
 final class CheckoutController
 {
     public function __construct(private CartService $cart, private OrderValidator $validator, private JsonOrderRepository $orders, private array $deliveryMethods) {}
