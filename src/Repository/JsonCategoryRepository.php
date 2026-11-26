@@ -1,9 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Repositories;
 
 use App\Models\Category;
-declare(strict_types=1);
 final class JsonCategoryRepository
 {
     public function __construct(private string $file) {}
