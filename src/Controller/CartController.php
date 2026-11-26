@@ -1,4 +1,8 @@
 <?php
+
+namespace App\Controllers;
+
+use App\Services\CartService;
 declare(strict_types=1);
 final class CartController
 {
