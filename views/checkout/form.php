@@ -1,7 +1,7 @@
 <section class="page-heading"><div class="eyebrow">ПОСЛЕДНИЙ ШАГ</div><h1>Оформление заказа</h1></section>
 <?php if($empty): ?><section class="panel"><p>Сначала добавьте товары в корзину.</p><a class="button" href="/catalog">В каталог</a></section>
 <?php else: ?>
-<section class="checkout-grid"><form class="panel stack-form" method="post" action="/checkout">
+<section class="checkout-grid"><form class="panel stack-form" method="post" action="/checkout"><input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken,ENT_QUOTES,'UTF-8') ?>">
 <?php foreach($errors as $error): ?><div class="alert alert-error"><?= htmlspecialchars($error,ENT_QUOTES,'UTF-8') ?></div><?php endforeach; ?>
 <label for="name">Имя</label><input id="name" name="name" required value="<?= htmlspecialchars($old['name']??'',ENT_QUOTES,'UTF-8') ?>">
 <label for="email">Email</label><input id="email" name="email" type="email" required value="<?= htmlspecialchars($old['email']??'',ENT_QUOTES,'UTF-8') ?>">
