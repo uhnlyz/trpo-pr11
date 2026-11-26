@@ -1,0 +1,22 @@
+name: Проверка PHP
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить исходный код
+        uses: actions/checkout@v4
+      - name: Настроить PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - name: Проверить синтаксис
+        run: find public src views tests -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Запустить проверки
+        run: php tests/check.php
