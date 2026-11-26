@@ -1,4 +1,6 @@
 <?php
+
+namespace App\Models;
 declare(strict_types=1);
 final class Category
 {
