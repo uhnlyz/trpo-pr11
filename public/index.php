@@ -21,7 +21,15 @@ spl_autoload_register(static function (string $class): void {
         return;
     }
     $relative = substr($class, strlen($prefix));
-    $file = __DIR__ . '/../src/' . str_replace('\\', '/', $relative) . '.php';
+    $segments = explode('\\', $relative);
+    $directoryMap = [
+        'Controllers' => 'Controller',
+        'Models' => 'Model',
+        'Repositories' => 'Repository',
+        'Services' => 'Service',
+    ];
+    $segments[0] = $directoryMap[$segments[0]] ?? $segments[0];
+    $file = __DIR__ . '/../src/' . implode('/', $segments) . '.php';
     if (is_file($file)) {
         require $file;
     }
