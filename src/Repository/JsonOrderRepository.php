@@ -1,4 +1,8 @@
 <?php
+
+namespace App\Repositories;
+
+use App\Models\OrderData;
 declare(strict_types=1);
 final class JsonOrderRepository
 {
