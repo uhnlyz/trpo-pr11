@@ -24,14 +24,6 @@ final class CheckoutController
         $old = $_SESSION['checkout_old'] ?? [];
         unset($_SESSION['checkout_errors'], $_SESSION['checkout_old']);
 
-        $deliveryPrice = 0;
-        foreach ($this->deliveryMethods as $method) {
-            if (($method['id'] ?? '') === ($old['delivery'] ?? '')) {
-                $deliveryPrice = (int) ($method['price'] ?? 0);
-                break;
-            }
-        }
-
         return [
             'title' => 'Оформление заказа',
             'empty' => $this->cart->lines() === [],
@@ -40,7 +32,6 @@ final class CheckoutController
             'old' => $old,
             'lines' => $this->cart->lines(),
             'total' => $this->cart->total(),
-            'deliveryPrice' => $deliveryPrice,
         ];
     }
 
