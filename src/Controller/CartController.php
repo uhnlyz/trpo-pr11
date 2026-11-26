@@ -1,9 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Controllers;
 
 use App\Services\CartService;
-declare(strict_types=1);
 final class CartController
 {
     public function __construct(private CartService $cart) {}
