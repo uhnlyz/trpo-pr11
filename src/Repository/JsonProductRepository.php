@@ -1,9 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Repositories;
 
 use App\Models\Product;
-declare(strict_types=1);
 final class JsonProductRepository
 {
     public function __construct(private string $file) {}
