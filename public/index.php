@@ -1,6 +1,18 @@
 <?php
 declare(strict_types=1);
 
+use App\Controllers\CartController;
+use App\Controllers\CatalogController;
+use App\Controllers\CheckoutController;
+use App\Controllers\HomeController;
+use App\Core\Router;
+use App\Repositories\JsonCategoryRepository;
+use App\Repositories\JsonOrderRepository;
+use App\Repositories\JsonProductRepository;
+use App\Services\CartService;
+use App\Services\OrderValidator;
+
+
 session_start();
 
 spl_autoload_register(static function (string $class): void {
@@ -14,17 +26,6 @@ spl_autoload_register(static function (string $class): void {
         require $file;
     }
 });
-
-use App\Controllers\CartController;
-use App\Controllers\CatalogController;
-use App\Controllers\CheckoutController;
-use App\Controllers\HomeController;
-use App\Core\Router;
-use App\Repositories\JsonCategoryRepository;
-use App\Repositories\JsonOrderRepository;
-use App\Repositories\JsonProductRepository;
-use App\Services\CartService;
-use App\Services\OrderValidator;
 
 $root = dirname(__DIR__);
 $csrfToken = $_SESSION['csrf_token'] ??= bin2hex(random_bytes(32));
